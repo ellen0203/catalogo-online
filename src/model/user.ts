@@ -1,4 +1,4 @@
-import { conn } from "../infra/Connection";
+import { Connection } from "../infra/Connection";
 
 export type User = {
     id?: number;
@@ -10,7 +10,7 @@ export type User = {
 
 
 export async function insert(user: User) {
-    await conn.query(
+    await Connection.query(
         'INSERT INTO usuario (nome, email, senha) VALUES ($1, $2, $3);',
         [
             user.nome,
@@ -21,16 +21,16 @@ export async function insert(user: User) {
 }
 
 export async function getAll() {
-    const { rows } = await conn.query('SELECT * FROM usuario;');
+    const { rows } = await Connection.query('SELECT * FROM usuario;');
     return rows;
 }
 
 export async function deleteById(id: string){
-   await conn.query('DELETE FROM usuario WHERE id=$1', [id]);
+   await Connection.query('DELETE FROM usuario WHERE id=$1', [id]);
 }
 
 export async function updateById(user: User) {
-    await conn.query(
+    await Connection.query(
         'UPDATE usuario SET name=$1, password=$2, email=$3 WHERE id=$4;',
         [
             user.nome,
@@ -42,7 +42,7 @@ export async function updateById(user: User) {
 }
 
 export async function getById(id: string) {
-    const {rows} = await conn.query(
+    const {rows} = await Connection.query(
         'SELECT * FROM usuario WHERE id =$1',
         [id]
     );
@@ -50,7 +50,7 @@ export async function getById(id: string) {
 }
 
 export async function getByEmail(email: string) {
-    const {rows} = await conn.query(
+    const {rows} = await Connection.query(
         'SELECT * FROM usuario WHERE email = $1',
         [email]
     );
@@ -58,7 +58,7 @@ export async function getByEmail(email: string) {
 }
 
 export async function getByEmailandPassword(email: string, senha: string) {
-    const {rows} = await conn.query(
+    const {rows} = await Connection.query(
         'SELECT * FROM usuario WHERE email = $1 AND senha = $2',
         [email, senha]
     );

@@ -1,15 +1,17 @@
-import { Router } from 'express';
-import { LoginSalvo, carregarLogin} from '../controller/user_controller';
+import { Router } from "express";
+import { login, register, show_login } from "../controller/user_controller";
 
 const UserRouter = Router();
 
-UserRouter.get('/cadastro', carregarLogin);
-UserRouter.post('/cadastro', carregarLogin);
-UserRouter.post('/user/login', LoginSalvo);
+UserRouter.get('/user/login', show_login);
+UserRouter.post('/user/register', register);
+UserRouter.post('/user/login', login);
 
-export {
+export{
     UserRouter
-};
+}
+
+
 
 
 

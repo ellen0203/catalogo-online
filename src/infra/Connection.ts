@@ -1,6 +1,6 @@
 import { Pool } from 'pg';
 
-const conn = new Pool({
+const Connection = new Pool({
     host: 'localhost',
     user: 'postgres',
     password: '1234',
@@ -8,5 +8,5 @@ const conn = new Pool({
 });
 
 export {
-    conn
+    Connection
 }

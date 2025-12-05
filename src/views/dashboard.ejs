@@ -1,12 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Bem Vindo! <%nome%></h1>
-</body>
+        <meta charset="utf-8">
+        <title>Receitas Culinárias — Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+      
+        <style>
+          body {
+            background: #122725;
+            color: #e8eaed;
+          }
+      
+          .navbar,
+          .offcanvas {
+            background: #14181f;
+          }
+      
+          .card {
+            background: #171a21;
+            border: 1px solid #232833;
+            height: 100%;
+          }
+      
+          .badge-type {
+            letter-spacing: .3px;
+          }
+      
+          .cover {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            background: #0b0d10;
+          }
+      
+          .search-hero {
+            background: linear-gradient(180deg, #10141b 0%, #0b0d10 100%);
+            border-bottom: 1px solid #232833;
+          }
+      
+          .form-control,
+          .form-select,
+          .form-button {
+            background: #0f131a;
+            color: #e8eaed;
+            border-color: #232833;
+          }
+      
+          .form-button {
+            background: #0758d2;
+          }
+      
+          .form-control::placeholder {
+            color: #9aa4af;
+          }
+      
+          .page-link {
+            background: #0f131a;
+            color: #e8eaed;
+            border-color: #232833;
+          }
+      
+          .page-item.active .page-link {
+            background: #375a7f;
+            border-color: #375a7f;
+          }
+      
+          a,
+          a:hover {
+            color: #9affb8;
+          }
+
+          
+        </style>
+    </head> 
+ <body>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+          <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🍽🥧 Receitas Culinárias</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" id="menu">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto">
+                 <a href="/user/login"><input class="btn btn-primary" type="reset" value="Sair"></a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+       
+  <div class="d-flex">
+ 
+    <div class="bg-dark text-white p-3" 
+         style="width: 220px; height: 100vh; position: fixed; top: 0; left: 0;">
+  
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" href="/user/login">Cadastrar</a>
+        </li>
+  
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" href="#">Listar</a>
+        </li>
+      </ul>
+    </div>
+
+    <div style="margin-left: 220px; padding: 20px; width: 100%;">
+      <h2>Bem-vindo! <%usuario.nome%></h2>
+    </div>
+ </body>
 </html>
